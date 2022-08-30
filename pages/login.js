@@ -1,42 +1,55 @@
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import Link from "next/link"
-import { gql, useQuery, useMutation } from "@apollo/client";
-import {Test} from '../lib/mutations.graphql';
+import Link from "next/link";
+import { useQuery, useMutation } from "@apollo/client";
+import { Test } from "../lib/mutations.graphql";
+import { gql } from "graphql-tag";
 import Error from "../pages/error";
+import { GET_DOGS } from "../lib/generate";
 
 const Login = () => {
   const [passwordType, setPasswordType] = useState("password");
   const [passwordInput, setPasswordInput] = useState("");
-  const rememberMe = useRef(null)
+  const rememberMe = useRef(null);
 
-  // const [generateCustomerToken, dataMutation] = useMutation(LOGIN)
+  const [generateCustomerToken, dataMutation] = useMutation(GET_DOGS);
 
-  const { data } = useMutation(Test , {variables: { email: "", password: ""}});
+  // const { data } = useMutation(Test, {
+  //   variables: { email: "", password: "" },
+  // });
 
-const email = data?.email
-console.log(email)
+  // const email = data?.email;
+  console.log(dataMutation);
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
   const clickRememberMe = () => {
-    rememberMe.current.click()
-  }
-  const handlePasswordChange =(event)=>{
+    rememberMe.current.click();
+  };
+  const handlePasswordChange = (event) => {
     setPasswordInput(event.target.value);
-  }
-  const togglePassword =()=>{
-    if(passwordType==="password")
-    {
-      setPasswordType("text")
+  };
+  const togglePassword = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
       return;
     }
-    setPasswordType("password")
-  }
+    setPasswordType("password");
+  };
   const onSubmit = (data) => {
     console.log(data);
+    // generateCustomerToken({
+    //   variables: { email: "anz@gmail.com", password: "Umap12345" },
+    // });
 
-    generateCustomerToken({ variables: { email: data?.email, password: data?.password } });
-  } 
+    generateCustomerToken({
+      variables: { email: data.email, password: data.password },
+    });
+  };
   // if (loading)
   //   return (
   //     <div className="mt-5">
@@ -69,9 +82,9 @@ console.log(email)
     <>
       <div className="h-20 flex items-center justify-between px-5">
         <div className="logo w-[220px]">
-            <Link href="/">
-                <img src="/logo.svg" className="cursor-pointer" alt="log"/>
-            </Link>
+          <Link href="/">
+            <img src="/logo.svg" className="cursor-pointer" alt="log" />
+          </Link>
         </div>
         <div className="avatar w-[290px] flex justify-end items-center">
           {/* <select className="" value="English (UK)">
@@ -94,52 +107,95 @@ console.log(email)
       </div>
       <div className="container mx-auto mt-7 flex flex-col items-center justify-center">
         <h1 className="font-bold text-5xl text-gray-600">Sign In</h1>
-        <p className="font-medium text-sm text-gray-500 mt-2 mb-7">Welcome back, you&apos;ve been missed!</p>
+        <p className="font-medium text-sm text-gray-500 mt-2 mb-7">
+          Welcome back, you&apos;ve been missed!
+        </p>
         <div className="xl:w-[45%] md:w-[70%] p-10 shadow-lg">
           <div className="flex justify-between flex-col lg:flex-row">
             <div className="flex justify-center items-center h-12 bg-gray-200 px-7 lg:w-[40%] rounded-lg gap-4 cursor-pointer my-5 lg:my-0">
-              <img src="/images/icons/google.svg" alt="google"/>
+              <img src="/images/icons/google.svg" alt="google" />
               <p className="hidden md:block">Log in with Google</p>
             </div>
             <div className="flex  justify-center items-center h-12 bg-gray-200 px-7 lg:w-[40%] rounded-lg gap-4 cursor-pointer my-5 lg:my-0">
-              <img src="/images/icons/apple.svg" alt="google"/>
+              <img src="/images/icons/apple.svg" alt="google" />
               <p className="hidden md:block">Log in with Apple</p>
             </div>
           </div>
-          <div
-            className="flex items-center my-7 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
-          >
+          <div className="flex items-center my-7 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
             <p className="text-center font-semibold mx-4 mb-0">Or</p>
           </div>
           <form className="" onSubmit={handleSubmit(onSubmit)}>
             <div className="my-2 relative">
-              <img src="/images/icons/mail-@.svg" className="absolute translate-y-full translate-x-full" alt="mail"/>
-              <input type="email" className="border rounded-lg w-full h-12 px-10" {...register("email", 
-              {
-                required: {
-                  value: true,
-                  message: "You need to specify a valid email address"
-                }, 
-                pattern: {
-                  value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  message: "I think I said _valid_, didn't I?"
-               }
-              }
-              )} placeholder="Input Email"/>
+              <img
+                src="/images/icons/mail-@.svg"
+                className="absolute translate-y-full translate-x-full"
+                alt="mail"
+              />
+              <input
+                type="email"
+                className="border rounded-lg w-full h-12 px-10"
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "You need to specify a valid email address",
+                  },
+                  pattern: {
+                    value:
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    message: "I think I said _valid_, didn't I?",
+                  },
+                })}
+                placeholder="Input Email"
+              />
             </div>
             <div className="my-5 relative">
-              <img src="/images/icons/lock.svg" className="absolute translate-y-full translate-x-full" alt="mail"/>
-              <img src={passwordType === "password" ? "/images/icons/eye-off.svg" : "/images/icons/eye.svg"} className="absolute right-0 translate-y-full -translate-x-full cursor-pointer" alt="mail" onClick={togglePassword}/>
-              <input type={passwordType} className="border rounded-lg w-full h-12 px-10" {...register("password")} placeholder="Input Password" onChange={handlePasswordChange}/>
+              <img
+                src="/images/icons/lock.svg"
+                className="absolute translate-y-full translate-x-full"
+                alt="mail"
+              />
+              <img
+                src={
+                  passwordType === "password"
+                    ? "/images/icons/eye-off.svg"
+                    : "/images/icons/eye.svg"
+                }
+                className="absolute right-0 translate-y-full -translate-x-full cursor-pointer"
+                alt="mail"
+                onClick={togglePassword}
+              />
+              <input
+                type={passwordType}
+                className="border rounded-lg w-full h-12 px-10"
+                {...register("password")}
+                placeholder="Input Password"
+                onChange={handlePasswordChange}
+              />
             </div>
             <div className="my-2 p-5 flex justify-between items-center flex-col lg:flex-row">
               <div className="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" className="border rounded-lg " ref={rememberMe}/>
-                <p className="text-gray-500 font-medium" onClick={clickRememberMe}>Remember me</p>
+                <input
+                  type="checkbox"
+                  className="border rounded-lg "
+                  ref={rememberMe}
+                />
+                <p
+                  className="text-gray-500 font-medium"
+                  onClick={clickRememberMe}
+                >
+                  Remember me
+                </p>
               </div>
-              <p className="text-gray-500 font-medium cursor-pointer">Forgot Password?</p>
+              <p className="text-gray-500 font-medium cursor-pointer">
+                Forgot Password?
+              </p>
             </div>
-            <button type="submit" className="w-full h-10 text-white rounded-xl font-medium bg-blue-600">Sign In</button>
+            <button
+              type="submit"
+              className="w-full h-10 text-white rounded-xl font-medium bg-blue-600"
+            >
+              Sign In
+            </button>
           </form>
         </div>
       </div>

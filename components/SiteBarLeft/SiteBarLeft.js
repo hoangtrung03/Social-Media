@@ -1,7 +1,10 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 const SiteBarLeft = props => {
+  const router = useRouter()
   const [isActive, setIsActive] = useState(false)
   const SiteBarData = [
     {
@@ -9,65 +12,84 @@ const SiteBarLeft = props => {
       img: '/images/icons/Feed.svg',
       name: 'Feed',
       href: '/',
-      isActive: ''
+      imgActive: '/images/icons/icon-feed-active.svg'
     },
     {
       id: 2,
       img: '/images/icons/my-community.svg',
       href: '/test',
-      name: 'My community'
+      name: 'My community',
+      imgActive: '/images/icons/icon-my-community-active.svg'
     },
     {
       id: 3,
       img: '/images/icons/message.svg',
-      href: '/',
-      name: 'Messages'
+      href: '/messages',
+      name: 'Messages',
+      imgActive: '/images/icons/icon-messages-active.svg'
     },
     {
       id: 4,
       img: '/images/icons/notification.svg',
-      href: '/',
-      name: 'Notification'
+      href: '/notification',
+      name: 'Notification',
+      imgActive: '/images/icons/icon-notification-active.svg'
     },
     {
       id: 5,
       img: '/images/icons/explore.svg',
       href: '/explore',
-      name: 'Explore'
+      name: 'Explore',
+      imgActive: '/images/icons/icon-explore-active.svg'
     },
     {
       id: 6,
       img: '/images/icons/user.svg',
-      href: '/',
-      name: 'Profile'
+      href: '/profile',
+      name: 'Profile',
+      imgActive: '/images/icons/icon-profile-active.svg'
     },
     {
       id: 7,
       img: '/images/icons/setting.svg',
-      href: '/',
-      name: 'Settings'
+      href: '/settings',
+      name: 'Settings',
+      imgActive: '/images/icons/icon-settings-active.svg'
     },
     {
       id: 8,
       img: '/images/icons/logout.svg',
-      href: '/',
-      name: 'Logout'
+      href: '',
+      name: 'Logout',
+      imgActive: '/images/icons/icon-logout-active.svg'
     }
   ]
+
   return (
     <div className="w-60 hidden bg-white md:flex flex-col px-5 py-2">
-      {SiteBarData.map(e => (
-        <ul className="mb-2" key={e.id}>
-          <li>
+      <ul className="mb-2">
+        {SiteBarData.map(e => (
+          <li key={e.id}>
             <Link href={e.href}>
-              <a className="h-11 px-5 hover:bg-[#4E5D78] rounded-lg flex items-center cursor-pointer hover:text-white">
-                <img src={e.img} className="mr-5 text-white" alt="icon" />
+              <a
+                className={`h-11 px-5 hover:bg-gray-500 rounded-lg flex items-center cursor-pointer hover:text-white ${
+                  router.asPath === e.href ? 'bg-gray-500 text-white' : ''
+                }`}
+              >
+                <p className="mr-5">
+                  <Image
+                    width={16}
+                    height={16}
+                    src={`${router.asPath === e.href ? e.imgActive : e.img}`}
+                    alt="icon"
+                  />
+                </p>
                 <p className="font-bold">{e.name}</p>
               </a>
             </Link>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </div>
   )
 }

@@ -135,7 +135,7 @@ const ContentCenter = props => {
             <div className="p-4 bg-green-100 rounded-md text-base">
               <img
                 src="/images/icons/book.svg"
-                className="rounded-full"
+                className="rounded-full w-[20px] min-h-[20px] max-w-[20px]"
                 alt="icons"
                 title="icons"
               />
@@ -153,7 +153,7 @@ const ContentCenter = props => {
             <div className="p-4 bg-red-100 rounded-md text-base">
               <img
                 src="/images/icons/camera.svg"
-                className="rounded-full"
+                className="rounded-full w-[20px] min-h-[20px] max-w-[20px]"
                 alt="icons"
                 title="icons"
               />
@@ -197,13 +197,17 @@ const ContentCenter = props => {
               placeholder="Write on his inbox"
             />
             <div className="bg-blue-100 h-10 px-3 rounded flex items-center">
-              <img src="/images/icons/send.svg" alt="icons"/>
+              <img src="/images/icons/send.svg" alt="icons" />
             </div>
           </div>
 
           <div className="flex items-start gap-2 p-2 bg-gray-100 rounded-lg my-2">
             <div className="p-4 bg-orange-100 rounded-md text-base">
-              <img src="/images/icons/birthday.svg" className="rounded-full" alt="icons"/>
+              <img
+                src="/images/icons/birthday.svg"
+                className="rounded-full w-[20px] min-h-[20px] max-w-[20px]"
+                alt="icons"
+              />
             </div>
             <div className="">
               <h4 className="text-gray-500 text-md font-medium">

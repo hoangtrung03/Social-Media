@@ -46,13 +46,21 @@ const Test = () => {
                     </div>
                   </li>
                   <li className="inline-flex cursor-pointer">
-                    <img src="/images/icons/picture.svg" className="mr-2" alt="icons"/>
+                    <img
+                      src="/images/icons/picture.svg"
+                      className="mr-2"
+                      alt="icons"
+                    />
                     <div className="text-sm text-gray-500 font-medium">
                       Photo/Video
                     </div>
                   </li>
                   <li className="inline-flex cursor-pointer">
-                    <img src="/images/icons/smile.svg" className="mr-2" alt="icons"/>
+                    <img
+                      src="/images/icons/smile.svg"
+                      className="mr-2"
+                      alt="icons"
+                    />
                     <div className="text-sm text-gray-500 font-medium">
                       Feeling
                     </div>

@@ -109,7 +109,7 @@ const SiteBarRight = props => {
           <div className="flex-1 items-center">
             <h4 className="text-gray-600 text-md font-bold">Friends</h4>
           </div>
-          <img src="/images/icons/other.svg" alt="icons"/>
+          <img src="/images/icons/other.svg" alt="icons" />
         </div>
         <div className="hihi">
           {FriendsData.map(value => (

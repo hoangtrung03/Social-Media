@@ -21,12 +21,13 @@ const Post = props => {
             </h4>
             <span className="text-gray-400 text-xs">15h. Public</span>
           </div>
-          <img src="/images/icons/other.svg" alt="icons" title="icons"/>
+          <img src="/images/icons/other.svg" alt="icons" title="icons" />
         </div>
         <img
           src="/images/content/post-photos.jpg"
           className="w-full my-4 object-cover"
-          alt="icons" title="icons"
+          alt="icons"
+          title="icons"
         />
         <div className="flex items-center justify-between">
           <div className="flex -space-x-2">
@@ -64,11 +65,11 @@ const Post = props => {
 
         <div className="flex items-center justify-between border-y py-2 my-3">
           <div className="inline-flex cursor-pointer">
-            <img src="/images/icons/heart.svg" className="mr-2" alt="icons"/>
+            <img src="/images/icons/heart.svg" className="mr-2" alt="icons" />
             <div className="text-sm text-gray-400 font-medium">Like</div>
           </div>
           <div className="inline-flex cursor-pointer">
-            <img src="/images/icons/comment.svg" className="mr-2" alt="icons"/>
+            <img src="/images/icons/comment.svg" className="mr-2" alt="icons" />
             <button
               className="text-sm text-gray-400 font-medium"
               onClick={handleFocusComment}
@@ -77,7 +78,7 @@ const Post = props => {
             </button>
           </div>
           <div className="inline-flex cursor-pointer">
-            <img src="/images/icons/share.svg" className="mr-2" alt="icons"/>
+            <img src="/images/icons/share.svg" className="mr-2" alt="icons" />
             <div className="text-sm text-gray-400 font-medium">Share</div>
           </div>
         </div>
@@ -95,7 +96,7 @@ const Post = props => {
             ref={inputEl}
           />
           <div className="bg-blue-100 h-10 px-3 rounded flex items-center">
-            <img src="/images/icons/send.svg" alt="icons"/>
+            <img src="/images/icons/send.svg" alt="icons" />
           </div>
         </div>
       </div>

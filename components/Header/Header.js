@@ -4,12 +4,18 @@ const Header = props => {
   return (
     <div className="h-20 flex items-center justify-between px-5">
       <div className="logo w-[220px]">
-        <img
-          src="/logo.svg"
-          className="cursor-pointer"
-          alt="logo"
-          title="logo"
-        />
+        <Link href="/">
+          <a>
+            <Image
+              src="/logo.svg"
+              className="cursor-pointer"
+              width={118}
+              height={28}
+              alt="logo"
+              title="logo"
+            />
+          </a>
+        </Link>
       </div>
       <div className="relative flex-1">
         <input

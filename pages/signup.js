@@ -34,7 +34,16 @@ const SignUp = () => {
       <div className="h-20 flex items-center justify-between px-5">
         <div className="logo w-[220px]">
           <Link href="/">
-            <img src="/logo.svg" className="cursor-pointer" alt="logo" title="logo"/>
+            <a>
+              <Image
+                src="/logo.svg"
+                className="cursor-pointer"
+                width={118}
+                height={28}
+                alt="logo"
+                title="logo"
+              />
+            </a>
           </Link>
         </div>
         <div className="avatar w-[290px] flex justify-end items-center">

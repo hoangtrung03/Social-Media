@@ -8,7 +8,7 @@ const Explore = () => {
       info: 'Features',
       date: 'Friday 13 August',
       title: 'How To Choose Best Bike For Spring In Bangladesh?',
-      des: ' If you ever wish to buy a motorcycle for you than you must think a lot before buying... '
+      des: ' If you ever wish to buy a motorcycle for you than you must think a lot before buying'
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ const Explore = () => {
       info: 'New',
       date: 'Friday 13 August',
       title: 'photography ideas for beginners using DSLR.',
-      des: 'Before the days of DSLR — if you can remember such a time — taking a great..'
+      des: 'Before the days of DSLR — if you can remember such a time — taking a great'
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ const Explore = () => {
       info: 'New',
       date: 'Friday 13 August',
       title: 'How to search for hotels near a street address?',
-      des: 'If you are looking for hotels near a street address, this simple search form will help you find...'
+      des: 'If you are looking for hotels near a street address, this simple search form will help you find'
     },
     {
       id: 4,
@@ -32,7 +32,7 @@ const Explore = () => {
       info: 'New',
       date: 'Friday 13 August',
       title: 'how to create web application using python?',
-      des: 'If you are looking for hotels near a street address, this simple search form will help you find...'
+      des: 'If you are looking for hotels near a street address, this simple search form will help you find'
     },
     {
       id: 5,
@@ -40,7 +40,7 @@ const Explore = () => {
       info: 'Features',
       date: 'Friday 13 August',
       title: 'Using Gimbal and Camera Without Drone?',
-      des: "You wrote a Python script that you're proud of, and now you want to show it off to the world."
+      des: "You wrote a Python script that you're proud of, and now you want to show it off to the world"
     },
     {
       id: 6,
@@ -48,7 +48,7 @@ const Explore = () => {
       info: 'New',
       date: 'Friday 13 August',
       title: 'How to make a simple car for school project?',
-      des: 'We can see a lot of models of toy car at market. There are varieties according to size, cost...'
+      des: 'We can see a lot of models of toy car at market. There are varieties according to size, cost'
     }
   ]
   return (
@@ -72,12 +72,14 @@ const Explore = () => {
                       {value.info}
                     </p>
                   </div>
-                  <p className="text-gray-400 text-sm">{value.date}</p>
+                  <p className="text-gray-400 text-sm line-clamp-1">
+                    {value.date}
+                  </p>
                 </div>
-                <h2 className="font-bold text-lg my-4 text-gray-600">
+                <h2 className="font-bold text-lg my-4 text-gray-600 overflow-hidden text-ellipsis lg:line-clamp-2 line-clamp-1">
                   {value.title}
                 </h2>
-                <p className="font-normal text-sm my-3 text-gray-400">
+                <p className="font-normal text-sm my-3 text-gray-400 overflow-hidden text-ellipsis lg:line-clamp-2 line-clamp-1">
                   {value.des}
                 </p>
               </div>
@@ -87,7 +89,7 @@ const Explore = () => {
                     Read more
                   </p>
                 </div>
-                <img src="/images/icons/arrow-top-right.svg" alt="icons"/>
+                <img src="/images/icons/arrow-top-right.svg" alt="icons" />
               </div>
             </div>
           </div>

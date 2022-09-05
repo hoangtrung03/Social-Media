@@ -1,5 +1,5 @@
-import React from "react";
-import Layout from "../components/Layout/Layout";
+import React from 'react'
+import Layout from '../components/Layout/Layout'
 
 const Test = () => {
   return (
@@ -39,19 +39,20 @@ const Test = () => {
                     <img
                       src="/images/icons/video-camera.svg"
                       className="mr-2"
+                      alt="icons"
                     />
                     <div className="text-sm text-gray-500 font-medium">
                       Live Video
                     </div>
                   </li>
                   <li className="inline-flex cursor-pointer">
-                    <img src="/images/icons/picture.svg" className="mr-2" />
+                    <img src="/images/icons/picture.svg" className="mr-2" alt="icons"/>
                     <div className="text-sm text-gray-500 font-medium">
                       Photo/Video
                     </div>
                   </li>
                   <li className="inline-flex cursor-pointer">
-                    <img src="/images/icons/smile.svg" className="mr-2" />
+                    <img src="/images/icons/smile.svg" className="mr-2" alt="icons"/>
                     <div className="text-sm text-gray-500 font-medium">
                       Feeling
                     </div>
@@ -69,16 +70,11 @@ const Test = () => {
           </div>
         </div>
       </div>
-
     </div>
-  );
-};
-
-export default Test;
-Test.getLayout = function getLayout(page) {
-  return (
-    <Layout>
-      {page}
-    </Layout>
   )
+}
+
+export default Test
+Test.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>
 }

@@ -1,13 +1,13 @@
-import "tailwindcss/tailwind.css";
+import 'tailwindcss/tailwind.css'
 
-import { SessionProvider } from "next-auth/react";
-import { ApolloProvider } from "@apollo/client";
-import { useApollo } from "../lib/apolloclient";
+import { SessionProvider } from 'next-auth/react'
+import { ApolloProvider } from '@apollo/client'
+import { useApollo } from '../lib/apolloclient'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
-  const getLayout = Component.getLayout || ((page) => page)
-  
-  const apolloClient = useApollo(pageProps.initialApolloState);
+  const getLayout = Component.getLayout || (page => page)
+
+  const apolloClient = useApollo(pageProps.initialApolloState)
 
   return getLayout(
     <ApolloProvider client={apolloClient}>
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <Component {...pageProps} />
       </SessionProvider>
     </ApolloProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

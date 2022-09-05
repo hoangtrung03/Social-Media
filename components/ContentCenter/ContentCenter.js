@@ -1,7 +1,7 @@
-import Post from "../Content/Post/Post";
-import Layout from "../Layout/Layout";
+import Post from '../Content/Post/Post'
+import Layout from '../Layout/Layout'
 
-const ContentCenter = (props) => {
+const ContentCenter = props => {
   return (
     <div className="grow bg-gray-50 rounded-2xl p-7 md:flex gap-7">
       <div className="flex-1">
@@ -10,7 +10,8 @@ const ContentCenter = (props) => {
             <img
               src="/images/avatar/avatar1.jpg"
               className="rounded-full"
-              alt="icon"
+              alt="icons"
+              title="icons"
             />
             <textarea
               type="text"
@@ -22,19 +23,34 @@ const ContentCenter = (props) => {
           <div className="flex items-center justify-between mt-4 relative z-50">
             <ul className="flex items-center gap-3">
               <li className="inline-flex cursor-pointer">
-                <img src="/images/icons/video-camera.svg" className="mr-2" />
+                <img
+                  src="/images/icons/video-camera.svg"
+                  className="mr-2"
+                  alt="icons"
+                  title="icons"
+                />
                 <div className="text-sm text-gray-500 font-medium">
                   Live Video
                 </div>
               </li>
               <li className="inline-flex cursor-pointer">
-                <img src="/images/icons/picture.svg" className="mr-2" />
+                <img
+                  src="/images/icons/picture.svg"
+                  className="mr-2"
+                  alt="icons"
+                  title="icons"
+                />
                 <div className="text-sm text-gray-500 font-medium">
                   Photo/Video
                 </div>
               </li>
               <li className="inline-flex cursor-pointer">
-                <img src="/images/icons/smile.svg" className="mr-2" />
+                <img
+                  src="/images/icons/smile.svg"
+                  className="mr-2"
+                  alt="icons"
+                  title="icons"
+                />
                 <div className="text-sm text-gray-500 font-medium">Feeling</div>
               </li>
             </ul>
@@ -44,7 +60,7 @@ const ContentCenter = (props) => {
           </div>
         </div>
 
-        <Post/>
+        <Post />
       </div>
       {/* Content Center You Might Like */}
       <div className="w-[288px] hidden md:block">
@@ -60,7 +76,12 @@ const ContentCenter = (props) => {
             </p>
           </div>
           <div className="flex items-start gap-2">
-            <img src="/images/avatar/avatar2.jpg" className="rounded-full" />
+            <img
+              src="/images/avatar/avatar2.jpg"
+              className="rounded-full"
+              alt="icons"
+              title="icons"
+            />
             <div className="">
               <h4 className="text-gray-500 text-md font-medium">
                 Radovan SkillArena
@@ -69,10 +90,26 @@ const ContentCenter = (props) => {
                 Founder &amp; CEO at Trophy
               </p>
               <div className="flex gap-4 my-4">
-                <img src="/images/icons/explore.svg" />
-                <img src="/images/icons/facebook.svg" />
-                <img src="/images/icons/twitter.svg" />
-                <img src="/images/icons/instagram.svg" />
+                <img
+                  src="/images/icons/explore.svg"
+                  alt="icons"
+                  title="icons"
+                />
+                <img
+                  src="/images/icons/facebook.svg"
+                  alt="icons"
+                  title="icons"
+                />
+                <img
+                  src="/images/icons/twitter.svg"
+                  alt="icons"
+                  title="icons"
+                />
+                <img
+                  src="/images/icons/instagram.svg"
+                  alt="icons"
+                  title="icons"
+                />
               </div>
             </div>
           </div>
@@ -91,12 +128,17 @@ const ContentCenter = (props) => {
             <div className="flex-1 items-center">
               <h4 className="text-gray-600 text-md font-bold">Recent Event</h4>
             </div>
-            <img src="/images/icons/other.svg" />
+            <img src="/images/icons/other.svg" alt="icons" title="icons" />
           </div>
 
           <div className="flex items-start gap-2 p-2 bg-gray-100 rounded-lg">
             <div className="p-4 bg-green-100 rounded-md text-base">
-              <img src="/images/icons/book.svg" className="rounded-full" />
+              <img
+                src="/images/icons/book.svg"
+                className="rounded-full"
+                alt="icons"
+                title="icons"
+              />
             </div>
             <div className="">
               <h4 className="text-gray-500 text-md font-medium">
@@ -109,7 +151,12 @@ const ContentCenter = (props) => {
           </div>
           <div className="flex items-start gap-2 p-2 bg-gray-100 rounded-lg my-4">
             <div className="p-4 bg-red-100 rounded-md text-base">
-              <img src="/images/icons/camera.svg" className="rounded-full" />
+              <img
+                src="/images/icons/camera.svg"
+                className="rounded-full"
+                alt="icons"
+                title="icons"
+              />
             </div>
             <div className="">
               <h4 className="text-gray-500 text-md font-medium">
@@ -150,13 +197,13 @@ const ContentCenter = (props) => {
               placeholder="Write on his inbox"
             />
             <div className="bg-blue-100 h-10 px-3 rounded flex items-center">
-              <img src="/images/icons/send.svg" />
+              <img src="/images/icons/send.svg" alt="icons"/>
             </div>
           </div>
 
           <div className="flex items-start gap-2 p-2 bg-gray-100 rounded-lg my-2">
             <div className="p-4 bg-orange-100 rounded-md text-base">
-              <img src="/images/icons/birthday.svg" className="rounded-full" />
+              <img src="/images/icons/birthday.svg" className="rounded-full" alt="icons"/>
             </div>
             <div className="">
               <h4 className="text-gray-500 text-md font-medium">
@@ -170,13 +217,9 @@ const ContentCenter = (props) => {
         </div>
       </div>
     </div>
-  );
-};
-export default ContentCenter;
-ContentCenter.getLayout = function getLayout(children) {
-  return (
-    <Layout>
-      {children}
-    </Layout>
   )
+}
+export default ContentCenter
+ContentCenter.getLayout = function getLayout(children) {
+  return <Layout>{children}</Layout>
 }

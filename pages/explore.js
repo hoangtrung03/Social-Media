@@ -1,60 +1,60 @@
-import React from "react";
-import Layout from "../components/Layout/Layout";
+import React from 'react'
+import Layout from '../components/Layout/Layout'
 const Explore = () => {
   const dataCard = [
     {
       id: 1,
-      img: "/images/content/how-to-choose-best-bike-for-spring-in-bangladesh-thumb.jpg",
-      info: "Features",
-      date: "Friday 13 August",
-      title: "How To Choose Best Bike For Spring In Bangladesh?",
-      des: " If you ever wish to buy a motorcycle for you than you must think a lot before buying... ",
+      img: '/images/content/how-to-choose-best-bike-for-spring-in-bangladesh-thumb.jpg',
+      info: 'Features',
+      date: 'Friday 13 August',
+      title: 'How To Choose Best Bike For Spring In Bangladesh?',
+      des: ' If you ever wish to buy a motorcycle for you than you must think a lot before buying... '
     },
     {
       id: 2,
-      img: "/images/content/photography-ideas-for-beginners-using-dslr-thumb.jpg",
-      info: "New",
-      date: "Friday 13 August",
-      title: "photography ideas for beginners using DSLR.",
-      des: "Before the days of DSLR — if you can remember such a time — taking a great..",
+      img: '/images/content/photography-ideas-for-beginners-using-dslr-thumb.jpg',
+      info: 'New',
+      date: 'Friday 13 August',
+      title: 'photography ideas for beginners using DSLR.',
+      des: 'Before the days of DSLR — if you can remember such a time — taking a great..'
     },
     {
       id: 3,
-      img: "/images/content/how-to-search-for-hotels-near-a-street-address-thumb.jpg",
-      info: "New",
-      date: "Friday 13 August",
-      title: "How to search for hotels near a street address?",
-      des: "If you are looking for hotels near a street address, this simple search form will help you find...",
+      img: '/images/content/how-to-search-for-hotels-near-a-street-address-thumb.jpg',
+      info: 'New',
+      date: 'Friday 13 August',
+      title: 'How to search for hotels near a street address?',
+      des: 'If you are looking for hotels near a street address, this simple search form will help you find...'
     },
     {
       id: 4,
-      img: "/images/content/how-to-create-web-application-using-python.jpg",
-      info: "New",
-      date: "Friday 13 August",
-      title: "how to create web application using python?",
-      des: "If you are looking for hotels near a street address, this simple search form will help you find...",
+      img: '/images/content/how-to-create-web-application-using-python.jpg',
+      info: 'New',
+      date: 'Friday 13 August',
+      title: 'how to create web application using python?',
+      des: 'If you are looking for hotels near a street address, this simple search form will help you find...'
     },
     {
       id: 5,
-      img: "/images/content/using-gimbal-and-camera-without-drone.jpg",
-      info: "Features",
-      date: "Friday 13 August",
-      title: "Using Gimbal and Camera Without Drone?",
-      des: "You wrote a Python script that you're proud of, and now you want to show it off to the world.",
+      img: '/images/content/using-gimbal-and-camera-without-drone.jpg',
+      info: 'Features',
+      date: 'Friday 13 August',
+      title: 'Using Gimbal and Camera Without Drone?',
+      des: "You wrote a Python script that you're proud of, and now you want to show it off to the world."
     },
     {
       id: 6,
-      img: "/images/content/how-to-make-a-simple-car-for-school-project.jpg",
-      info: "New",
-      date: "Friday 13 August",
-      title: "How to make a simple car for school project?",
-      des: "We can see a lot of models of toy car at market. There are varieties according to size, cost...",
-    },
-  ];
+      img: '/images/content/how-to-make-a-simple-car-for-school-project.jpg',
+      info: 'New',
+      date: 'Friday 13 August',
+      title: 'How to make a simple car for school project?',
+      des: 'We can see a lot of models of toy car at market. There are varieties according to size, cost...'
+    }
+  ]
   return (
     <div className="flex-1 p-[30px] lg:mr-7 bg-gray-50 rounded-2xl">
       <div className="flex flex-col md:flex-row items-center flex-wrap gap-7">
-        {dataCard.map((value) => (
+        {dataCard.map(value => (
           <div
             className="w-3/4 md:w-[calc(50%-30px)] xl:w-[calc(33%-30px)] h-[420px] md:h-[430px] bg-white rounded-lg"
             key={value.id}
@@ -87,17 +87,17 @@ const Explore = () => {
                     Read more
                   </p>
                 </div>
-                <img src="/images/icons/arrow-top-right.svg" />
+                <img src="/images/icons/arrow-top-right.svg" alt="icons"/>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Explore;
+export default Explore
 Explore.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

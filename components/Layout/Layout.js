@@ -1,7 +1,7 @@
-import Head from "next/head";
-import Header from "../Header/Header";
-import SiteBarLeft from "../SiteBarLeft/SiteBarLeft";
-import SiteBarRight from "../SiteBarRight/SiteBarRight";
+import Head from 'next/head'
+import Header from '../Header/Header'
+import SiteBarLeft from '../SiteBarLeft/SiteBarLeft'
+import SiteBarRight from '../SiteBarRight/SiteBarRight'
 
 export default function Layout({ children }) {
   return (
@@ -14,12 +14,10 @@ export default function Layout({ children }) {
         <main className="">
           <div className="flex">
             <SiteBarLeft />
-              <div className="flex-1">
-                {children}
-              </div>
+            <div className="flex-1">{children}</div>
           </div>
         </main>
       </div>
     </>
-  );
+  )
 }

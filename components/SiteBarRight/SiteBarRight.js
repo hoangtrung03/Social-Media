@@ -1,24 +1,24 @@
-const SiteBarRight = (props) => {
+const SiteBarRight = props => {
   const FriendsData = [
     {
       id: 1,
-      name: "Kayleigh Bysouth ",
-      avatarImg: "/images/avatar/avatar1.jpg",
-      status: "2min",
+      name: 'Kayleigh Bysouth ',
+      avatarImg: '/images/avatar/avatar1.jpg',
+      status: '2min'
     },
     {
       id: 2,
-      name: "Jess Phillips MP",
-      avatarImg: "/images/avatar/avatar2.jpg",
-      status: "10min",
+      name: 'Jess Phillips MP',
+      avatarImg: '/images/avatar/avatar2.jpg',
+      status: '10min'
     },
     {
       id: 3,
-      name: "MP Eslam Hisham",
-      avatarImg: "/images/avatar/avatar3.jpg",
-      status: "5min",
-    },
-  ];
+      name: 'MP Eslam Hisham',
+      avatarImg: '/images/avatar/avatar3.jpg',
+      status: '5min'
+    }
+  ]
   return (
     <div className="w-[310px] bg-white hidden xl:flex flex-col items-start px-5 pt-2">
       <div className="w-full">
@@ -109,10 +109,10 @@ const SiteBarRight = (props) => {
           <div className="flex-1 items-center">
             <h4 className="text-gray-600 text-md font-bold">Friends</h4>
           </div>
-          <img src="/images/icons/other.svg" />
+          <img src="/images/icons/other.svg" alt="icons"/>
         </div>
         <div className="hihi">
-          {FriendsData.map((value) => (
+          {FriendsData.map(value => (
             <div
               className="flex items-center justify-between gap-2 my-4"
               key={value.id}
@@ -131,6 +131,6 @@ const SiteBarRight = (props) => {
         </div>
       </div>
     </div>
-  );
-};
-export default SiteBarRight;
+  )
+}
+export default SiteBarRight

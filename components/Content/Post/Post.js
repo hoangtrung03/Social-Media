@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import { useRef } from 'react'
 
-const Post = (props) => {
+const Post = props => {
   const inputEl = useRef(null)
   const handleFocusComment = () => {
     inputEl.current.focus()
@@ -21,11 +21,12 @@ const Post = (props) => {
             </h4>
             <span className="text-gray-400 text-xs">15h. Public</span>
           </div>
-          <img src="/images/icons/other.svg" />
+          <img src="/images/icons/other.svg" alt="icons" title="icons"/>
         </div>
         <img
           src="/images/content/post-photos.jpg"
           className="w-full my-4 object-cover"
+          alt="icons" title="icons"
         />
         <div className="flex items-center justify-between">
           <div className="flex -space-x-2">
@@ -63,15 +64,20 @@ const Post = (props) => {
 
         <div className="flex items-center justify-between border-y py-2 my-3">
           <div className="inline-flex cursor-pointer">
-            <img src="/images/icons/heart.svg" className="mr-2" />
+            <img src="/images/icons/heart.svg" className="mr-2" alt="icons"/>
             <div className="text-sm text-gray-400 font-medium">Like</div>
           </div>
           <div className="inline-flex cursor-pointer">
-            <img src="/images/icons/comment.svg" className="mr-2" />
-            <button className="text-sm text-gray-400 font-medium" onClick={handleFocusComment}>Comments</button>
+            <img src="/images/icons/comment.svg" className="mr-2" alt="icons"/>
+            <button
+              className="text-sm text-gray-400 font-medium"
+              onClick={handleFocusComment}
+            >
+              Comments
+            </button>
           </div>
           <div className="inline-flex cursor-pointer">
-            <img src="/images/icons/share.svg" className="mr-2" />
+            <img src="/images/icons/share.svg" className="mr-2" alt="icons"/>
             <div className="text-sm text-gray-400 font-medium">Share</div>
           </div>
         </div>
@@ -89,12 +95,12 @@ const Post = (props) => {
             ref={inputEl}
           />
           <div className="bg-blue-100 h-10 px-3 rounded flex items-center">
-            <img src="/images/icons/send.svg" />
+            <img src="/images/icons/send.svg" alt="icons"/>
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post

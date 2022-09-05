@@ -14,8 +14,8 @@ const magentoProxyApi = async (req, res) => {
       secure: false,
       logLevel: 'error',
       pathRewrite: {
-        '^/store': '/', // remove path
-      },
+        '^/store': '/' // remove path
+      }
     })
   )
 }

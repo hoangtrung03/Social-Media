@@ -72,7 +72,7 @@ const SiteBarLeft = props => {
           <li key={e.id}>
             <Link href={e.href}>
               <a
-                className={`h-11 px-5 hover:bg-gray-500 rounded-lg flex items-center cursor-pointer hover:text-white ${
+                className={`h-11 px-5 hover:bg-gray-500 rounded-lg flex items-center cursor-pointer hover:text-white mb-2 ${
                   router.asPath === e.href ? 'bg-gray-500 text-white' : ''
                 }`}
               >
@@ -84,7 +84,7 @@ const SiteBarLeft = props => {
                     alt="icon"
                   />
                 </p>
-                <p className="font-bold">{e.name}</p>
+                <span className="font-bold">{e.name}</span>
               </a>
             </Link>
           </li>
